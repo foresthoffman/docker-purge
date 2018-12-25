@@ -5,6 +5,11 @@
 # All rights reserved.
 #
 
+if [[ "$(which docker)" == "" ]]; then
+  echo "Docker is not installed, do so at https://www.docker.com/, and then run this script again."
+  exit 1
+fi
+
 dockerBin="$(dirname $(which docker))"
 target="${dockerBin}/docker-purge"
 if [[ ! -f "$target" ]]; then

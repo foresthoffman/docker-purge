@@ -8,7 +8,7 @@ $ ./install.sh [-f]
 # The -f option attempts to force the installation.
 ```
 
-`docker-purge` will be installed to `/usr/bin/docker-purge`, if successful. Make sure that `/usr/bin` is in your `PATH`.
+`docker-purge` will be installed next to your `docker` executable, if successful. Make sure that `docker` is in your `PATH`.
 
 # Usage
 

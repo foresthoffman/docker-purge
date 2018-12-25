@@ -5,10 +5,11 @@
 # All rights reserved.
 #
 
-target=/usr/bin/docker-purge
+dockerBin="$(dirname $(which docker))"
+target="${dockerBin}/docker-purge"
 if [[ ! -f "$target" ]]; then
   echo "Copying to $target."
-  cp ./purge.sh
+  cp ./purge.sh $target
 else
   echo "$target already exists."
   if [[ "$1" != "-f" ]]; then
@@ -20,6 +21,7 @@ else
 fi
 
 echo "Attemtping to make $target executable"
-chmod u+x $target
+chmod +x $target
+chown $(whoami) $target
 
 echo "All done!"
